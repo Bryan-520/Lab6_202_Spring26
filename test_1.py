@@ -5,13 +5,19 @@ from lab6_1 import Node, search, insert, delete
 
 class TestSearch(unittest.TestCase):
     def test_search_finds_existing_value(self):
-        pass
+        my_tree = Node(10, Node(5), Node(15))
+
+        self.assertEqual(search(my_tree, 10), True)
 
     def test_search_returns_false_for_missing_value(self):
-        pass
+        my_tree = Node(10, Node(5), Node(15))
+
+        self.assertEqual(search(my_tree, 12), False)
 
     def test_search_on_empty_tree(self):
-        pass
+        my_tree = Node()
+
+        self.assertEqual(search(my_tree, 1), False)
 
 
 class TestInsert(unittest.TestCase):
